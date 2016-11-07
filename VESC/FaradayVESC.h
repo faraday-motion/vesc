@@ -13,7 +13,6 @@ public:
 	void update();
 	void set_current(float current);
 	void set_current_brake(float current);
-	void get_values();
 };
 
 #endif

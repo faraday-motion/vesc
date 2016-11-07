@@ -1,5 +1,5 @@
 /*
-	Copyright 2012 Benjamin Vedder	benjamin@vedder.se
+	Copyright 2015 Benjamin Vedder	benjamin@vedder.se
 
 	This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -16,18 +16,21 @@
     */
 
 /*
- * crc.h
+ * bldc_interface_uart.h
  *
- *  Created on: 26 feb 2012
+ *  Created on: 9 okt 2015
  *      Author: benjamin
  */
 
-#ifndef CRC_H_
-#define CRC_H_
+#ifndef BLDC_INTERFACE_UART_H_
+#define BLDC_INTERFACE_UART_H_
 
-/*
- * Functions
- */
-unsigned short crc16(unsigned char *buf, unsigned int len);
+// Includes
+#include "packet.h" // For the MAX_PACKET_LEN define
 
-#endif /* CRC_H_ */
+// Functions
+void bldc_interface_uart_init(void(*func)(unsigned char *data, unsigned int len));
+void bldc_interface_uart_process_byte(unsigned char b);
+void bldc_interface_uart_run_timer(void);
+
+#endif /* BLDC_INTERFACE_UART_H_ */
