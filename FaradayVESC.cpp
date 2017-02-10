@@ -32,6 +32,10 @@ void FaradayVESC::init(void(*s_func)(unsigned char *data, unsigned int len), voi
 	bldc_interface_set_rx_value_func(v_func);
 }
 
+/**
+ * Processesing the bytes received from the VESC.
+ * @param b [description]
+ */
 void FaradayVESC::process(unsigned char b)
 {
 	bldc_interface_uart_process_byte(b);
